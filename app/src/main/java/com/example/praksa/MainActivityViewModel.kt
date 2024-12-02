@@ -5,6 +5,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.praksa.network.RandomSlikaRepo
+import com.google.firebase.Firebase
+import com.google.firebase.analytics.analytics
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -44,7 +46,7 @@ class MainActivityViewModel @Inject constructor(
     }
     fun fetchData() = viewModelScope.launch {
         val slikaa = randomSlikaRepo.getRandomSliku()
-
+//        Firebase.analytics.logEvent("ucitani podaci", null)
         _appState.value= _appState.value.copy(randSlika = slikaa)
         Log.e("RESPONSE", slikaa?.toString() ?: "failed to fetch")
     }

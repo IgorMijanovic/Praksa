@@ -1,5 +1,5 @@
 [versions]
-agp = "8.7.1"
+agp = "8.7.2"
 converterGson = "2.9.0"
 hiltAndroid = "2.51.1"
 kotlin = "2.0.0"
@@ -13,6 +13,8 @@ composeBom = "2024.04.01"
 retrofit = "2.10.0"
 protoliteWellKnownTypes = "18.0.0"
 ui = "1.7.5"
+navigationFragmentKtx = "2.8.4"
+navigationUiKtx = "2.8.4"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -38,6 +40,8 @@ protolite-well-known-types = { group = "com.google.firebase", name = "protolite-
 ui = { module = "androidx.compose.ui:ui", version.ref = "ui" }
 ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
 ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

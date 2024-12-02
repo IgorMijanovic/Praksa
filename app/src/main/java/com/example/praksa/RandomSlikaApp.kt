@@ -1,9 +1,11 @@
 package com.example.praksa
 
+import android.annotation.SuppressLint
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -14,9 +16,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -31,6 +37,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.example.praksa.navigation.HeaderNavigation
 
+@OptIn(ExperimentalMaterial3Api::class)
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable //moze da se menja utunura sebe
 fun RandomSlikaApp(
     viewModel: MainActivityViewModel = viewModel() //TODO: pitaj za ovo
@@ -43,22 +51,46 @@ fun RandomSlikaApp(
             .fillMaxSize()
             .background(color = MaterialTheme.colorScheme.background)
     ) {
-        Spacer(modifier = Modifier.height(50.dp))
+//        Spacer(modifier = Modifier.height(50.dp))
+//
+//        HeaderNavigation(
+//            navigation = appState.navigation,
+//            onClick = { viewModel.selectPage(it) }
+//        )
 
-        HeaderNavigation(
-            navigation = appState.navigation,
-            onClick = { viewModel.selectPage(it) }
-        )
+        Scaffold (
+            topBar = {
+                TopAppBar(
+                    colors = topAppBarColors(
+                        containerColor = MaterialTheme.colorScheme.primaryContainer,
+                        titleContentColor = MaterialTheme.colorScheme.primary,
+                    ),
+                    title = {
+                        Text("Top app bar")
+                    }
+                )
+            }
+        ){ innerPadding ->
+            Column(
+                modifier = Modifier
+                    .padding(innerPadding),
 
-        val selectedPage = appState.navigation.selectedPage
-        when(selectedPage.title){
-            "Page 1" -> {
+                verticalArrangement = Arrangement.spacedBy(16.dp),)
+            {
                 UnosTeksaScreen(viewModel)
             }
-            "Page 2" -> {
-                DrugiEkran(viewModel)
-            }
+
         }
+
+//        val selectedPage = appState.navigation.selectedPage
+//        when(selectedPage.title){
+//            "Page 1" -> {
+//                UnosTeksaScreen(viewModel)//app state treba bolje
+//            }
+//            "Page 2" -> {
+//                DrugiEkran(viewModel)
+//            }
+//        }
 
 //        UnosTeksaScreen(viewModel)
 

@@ -13,10 +13,9 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun DrugiEkran(
-    viewModel: MainActivityViewModel
+    appState: AppState
 ){
 
-    val appState by viewModel.appState.collectAsState()
 
     Box(
         modifier = Modifier.padding(horizontal = 16.dp, vertical = 20.dp)

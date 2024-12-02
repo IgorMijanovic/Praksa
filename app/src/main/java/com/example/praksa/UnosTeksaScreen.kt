@@ -1,5 +1,6 @@
 package com.example.praksa
 
+import android.annotation.SuppressLint
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -25,6 +26,9 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.painter.BitmapPainter
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import com.google.firebase.Firebase
+import com.google.firebase.analytics.analytics
+
 
 @Composable
 fun UnosTeksaScreen(
@@ -80,6 +84,7 @@ fun UnosTeksaScreen(
                     onClick = {
                         Log.d("blad", " $searchText")
                         viewModel.updateLabela(searchText)
+                        Firebase.analytics.logEvent("kliknuto_dugme", null)
                     },
                     modifier = Modifier
                         .fillMaxWidth()
