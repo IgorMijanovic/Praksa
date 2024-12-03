@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "638156077468",
+    "project_id": "praksafirebase",
+    "storage_bucket": "praksafirebase.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638156077468:android:1bae8c4b84970f48527059",
+        "android_client_info": {
+          "package_name": "com.example.praksa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChuRx8DpWUz5K91vty-xoCabuSoKOqV3M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
