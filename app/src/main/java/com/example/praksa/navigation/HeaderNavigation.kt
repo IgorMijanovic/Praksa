@@ -16,12 +16,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
-import com.example.praksa.AppState
+import com.example.praksa.ununosTekstaEkran.UnosTekstaState
 
 @Composable
 fun HeaderNavigation(
-    navigation: AppState.Navigation,
-    onClick: (AppState.Navigation.Page) -> Unit
+    navigation: UnosTekstaState.Navigation,
+    onClick: (UnosTekstaState.Navigation.Page) -> Unit
 ) {
     Row(
         modifier = Modifier

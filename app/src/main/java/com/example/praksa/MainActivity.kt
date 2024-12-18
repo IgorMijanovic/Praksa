@@ -28,15 +28,15 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_activity)
+//        setContentView(R.layout.main_activity)
 //        enableEdgeToEdge()
-//        setContent {
-//            PraksaTheme {
-//
-//                    RandomSlikaApp()
-//
-//            }
-//        }
+        setContent {
+            PraksaTheme {
+
+                    RandomSlikaApp()
+
+            }
+        }
     }
 }
 

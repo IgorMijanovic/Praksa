@@ -1,12 +1,8 @@
 package com.example.praksa.network
 
-import android.graphics.Bitmap
-import com.example.praksa.AppState
-import com.example.praksa.network.model.RandomSlika
 import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.GET
-import java.util.Random
 
 interface RandomSlikaService {
 

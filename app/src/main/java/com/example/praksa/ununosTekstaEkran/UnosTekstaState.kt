@@ -1,9 +1,8 @@
-package com.example.praksa
+package com.example.praksa.ununosTekstaEkran
 
 import android.graphics.Bitmap
-import android.graphics.Color
 
-data class AppState(
+data class UnosTekstaState(
     val navigation: Navigation,
     var randSlika: Bitmap?,
     var textLabele: String
@@ -17,14 +16,14 @@ data class AppState(
     }
 
     companion object{    /// <------ svuda u kodu je dostupan. kao public. singleton
-        fun initial(slika: Bitmap?): AppState{
+        fun initial(slika: Bitmap?): UnosTekstaState {
             val pages = buildList {
                 add(Navigation.Page("Page 1", "strana1"))
                 add(Navigation.Page("Page 2", "strana2"))
             }
 
 //            val bitmap = BitmapFactory.decodeResource(context.resources, R.drawable.your_image)
-            return AppState(
+            return UnosTekstaState(
                 navigation = Navigation(
                     navItems = pages,
                     selectedPage = pages[0]

@@ -2,11 +2,12 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-
+    alias(libs.plugins.kotlin.serialization)
 
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
     id("com.google.gms.google-services")
+
 }
 
 android {
@@ -79,6 +80,10 @@ dependencies {
     kapt(libs.hilt.android.compiler)
 
     implementation (libs.ui)
+    implementation(libs.kotlinx.serialization.json)
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+//    implementation(libs.navigation.compose)
+//    implementation(libs.kotlinx.serialization.json)
 }
 
 kapt {

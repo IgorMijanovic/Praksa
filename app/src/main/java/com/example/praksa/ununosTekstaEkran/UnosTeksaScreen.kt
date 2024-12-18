@@ -1,6 +1,5 @@
-package com.example.praksa
+package com.example.praksa.ununosTekstaEkran
 
-import android.annotation.SuppressLint
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -26,17 +25,20 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.painter.BitmapPainter
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import com.example.praksa.MainActivityViewModel
 import com.google.firebase.Firebase
 import com.google.firebase.analytics.analytics
 
 
 @Composable
 fun UnosTeksaScreen(
-    viewModel: MainActivityViewModel,
-//    appState: AppState
+//    viewModel: UnosTekstaViewModel,
+    appState: UnosTekstaState,
+    onTekstSubmit: (String) -> Unit
+
 ) {
 
-    val appState by viewModel.appState.collectAsState()
+//    val appState by viewModel.unosTekstaState.collectAsState()
 
     Card(
         colors = CardDefaults.cardColors(
@@ -83,7 +85,9 @@ fun UnosTeksaScreen(
                 Button(
                     onClick = {
                         Log.d("blad", " $searchText")
-                        viewModel.updateLabela(searchText)
+//                        viewModel.updateLabela(searchText)//callback umesto ovoga
+                        onTekstSubmit(searchText)
+
                         Firebase.analytics.logEvent("kliknuto_dugme", null)
                     },
                     modifier = Modifier
